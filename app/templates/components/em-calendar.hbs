@@ -1,0 +1,38 @@
+<div class="cal-title">
+  <div class="cal-title-left">
+    <div class="cal-title-date">{{date}}</div>
+    <div class="cal-title-month">{{monthName}}</div>
+  </div>
+  <div class="cal-title-right">
+    <div class="cal-title-year">
+      <span class="cal-title-cn-year">{{cnCalendar.stemBranch}} {{cnCalendar.animal}}</span> {{year}}
+    </div>
+    <ul class="cal-title-monthes">
+      {{#each monthOptions as |option index|}}
+        <li class="{{cal-selected-month index month 'sel'}}" {{action 'selectMonth' index}}>
+          {{option}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div class="cal-body">
+  <table>
+    <thead>
+      <tr>
+        {{#each weekOptions as |option index|}}
+          <td class="{{is-gt index 4 'cal-holiday'}}">{{option}}</td>
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each weekDates as |weekDate|}}
+        <tr>
+          {{#each weekDate as |d index|}}
+            <td class="{{cal-holiday index}} {{cal-next-month d.dateArray selectedDay}} {{cal-past-month d.dateArray selectedDay}} {{is-equals d.dateArray today 'cal-today'}} {{is-equals d.dateArray selectedDay 'cal-sel-date'}}" {{action 'selectDate' d}}><span data-year="{{d.gregorianYear}}" data-month="{{d.gregorianMonth}}" data-date="{{d.gregorianDate}}" data-cn-date="{{d.cnDate}}"></span></td>
+          {{/each}}
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
