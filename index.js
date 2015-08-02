@@ -8,6 +8,6 @@ module.exports = {
     this._super.included(app);
 
     // calendar css
-    app.import(app.bowerDirectory + '/coreweb-css/css/calendar-theme.css');
+    app.import(app.bowerDirectory + '/coreweb-css/css/calendar-theme/helveti.css');
   }
 };
