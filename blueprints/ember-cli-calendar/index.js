@@ -4,6 +4,6 @@ module.exports = {
   normalizeEntityName: function() {}, // no-op since we're just adding dependencies
 
   afterInstall: function () {
-    return this.addBowerPackageToProject('coreweb-css', '*');
+    return this.addBowerPackageToProject('coreweb-css', 'git://github.com/hilotus/coreweb-css.git');
   }
 };

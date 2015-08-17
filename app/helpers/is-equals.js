@@ -14,12 +14,20 @@ var arraysEqual = function(a, b) {
   return true;
 }
 
-export default Ember.Handlebars.makeBoundHelper(function(value1, value2, options) {
-  var checked;
+export default Ember.Helper.helper(function(params) {
+  var checked,
+    value1 = params[0],
+    value2 = params[1],
+    options = params[2] || '';
+
   if (Ember.isArray(value1) && Ember.isArray(value2)) {
     checked = arraysEqual(value1, value2);
   } else {
     checked = value1 === value2;
+  }
+
+  if (!options) {
+    options = '';
   }
 
   var escaped = checked ? options : '';
