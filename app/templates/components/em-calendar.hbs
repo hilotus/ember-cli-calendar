@@ -29,7 +29,7 @@
       {{#each weekDates as |weekDate|}}
         <tr>
           {{#each weekDate as |d index|}}
-            <td class="{{is-gt index 4 'cal-holiday'}} {{cal-next-month d.dateArray selectedDay}} {{cal-past-month d.dateArray selectedDay}} {{is-equals d.dateArray today 'cal-today'}} {{is-equals d.dateArray selectedDay 'cal-sel-date'}}" {{action 'selectDate' d}}><span data-year="{{d.gregorianYear}}" data-month="{{d.gregorianMonth}}" data-date="{{d.gregorianDate}}" data-cn-date="{{d.cnDate}}"></span></td>
+            <td class="{{is-gt index 4 'cal-holiday'}} {{cal-next-month d.dateArray selected}} {{cal-past-month d.dateArray selected}} {{is-equals d.dateArray today 'cal-today'}} {{is-equals d.dateArray selected 'cal-sel-date'}}" {{action 'selectDate' d}}><span data-year="{{d.gregorianYear}}" data-month="{{d.gregorianMonth}}" data-date="{{d.gregorianDate}}" data-cn-date="{{d.cnDate}}"></span></td>
           {{/each}}
         </tr>
       {{/each}}
